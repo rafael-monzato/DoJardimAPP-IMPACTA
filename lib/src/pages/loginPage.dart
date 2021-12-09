@@ -28,8 +28,8 @@ class _LoginPageState extends State<LoginPage> {
       decoration: InputDecoration(
         hintText: "Digite seu Email",
         hintStyle: TextStyle(
-          color: Color(0xFFBDC2CB),
-          fontSize: 18.0,
+          color: Color(0xFF999999),
+          fontSize: 14.0,
         ),
       ),
     );
@@ -41,8 +41,8 @@ class _LoginPageState extends State<LoginPage> {
       decoration: InputDecoration(
         hintText: "Digite Sua Senha",
         hintStyle: TextStyle(
-          color: Color(0xFFBDC2CB),
-          fontSize: 18.0,
+          color: Color(0xFF999999),
+          fontSize: 14.0,
         ),
         suffixIcon: IconButton(
           onPressed: () {
@@ -103,32 +103,35 @@ class _LoginPageState extends State<LoginPage> {
 
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 10.0),
+        padding: EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Image(
-              image: AssetImage("assets/imagens/login.gif"),
-              height: 140.0,
-              width: 140.0,
+              image: AssetImage("assets/imagens/login.png"),
+              height: 200.0,
+              width: 250.0,
             ),
-            Card(
-              elevation: 5.0,
-              child: Padding(
-                padding: EdgeInsets.all(20.0),
-                child: Column(
+            Column(
                   children: <Widget>[
                     _emailtxt(),
                     SizedBox(
-                      height: 7.0,
+                      height: 20.0,
                     ),
                     _senhatxt(),
                   ],
+            ),
+            Container(alignment: Alignment.centerRight,
+              child: TextButton(
+                style: TextButton.styleFrom(
+                  textStyle: TextStyle(fontSize: 14),
                 ),
+                onPressed: () {},
+                child: Text('Esqueceu sua senha?', style: TextStyle(color: Color(0xFFFF005C)),),
               ),
             ),
             SizedBox(
-              height: 10.0,
+              height: 30.0,
             ),
             GestureDetector(
               onTap: () {
@@ -139,8 +142,8 @@ class _LoginPageState extends State<LoginPage> {
                 btnText: "Logar",
               ),
             ),
-            Divider(
-              height: 35.0,
+            SizedBox(
+              height: 30,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -148,8 +151,8 @@ class _LoginPageState extends State<LoginPage> {
                 Text(
                   "Não possui Cadastro?",
                   style: TextStyle(
-                      color: Color(0xFFBDC2CB),
-                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF999999),
+                      fontWeight: FontWeight.w400,
                       fontSize: 16.0),
                 ),
                 SizedBox(width: 10.0),
@@ -161,25 +164,9 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text(
                     "Cadastre-se",
                     style: TextStyle(
-                        color: Colors.blueAccent,
+                        color: Color(0xFFFF005C),
                         fontWeight: FontWeight.bold,
                         fontSize: 16.0),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  "Recuperar Senha?",
-                  style: TextStyle(
-                    fontSize: 15.0,
-                    color: Colors.red,
-                    fontWeight: FontWeight.w400,
                   ),
                 ),
               ],

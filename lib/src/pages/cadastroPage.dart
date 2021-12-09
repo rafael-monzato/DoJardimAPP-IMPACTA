@@ -38,12 +38,12 @@ class _cadastroPageState extends State<cadastroPage> {
 
   Widget _emailtxt() {
     return TextFormField(
-      controller: emailtxt,
       decoration: InputDecoration(
+        border: OutlineInputBorder(),
         hintText: "Email",
         hintStyle: TextStyle(
-          color: Color(0xFFBDC2CB),
-          fontSize: 18.0,
+          color: Color(0xFF999999),
+          fontSize: 14.0,
         ),
       ),
       onSaved: (String email) {
@@ -52,10 +52,10 @@ class _cadastroPageState extends State<cadastroPage> {
       validator: (String email) {
         String errorMessage;
         if (!email.contains("@")) {
-          errorMessage = "Seu email está incorreto";
+          errorMessage = "Email incorreto";
         }
         if (email.isEmpty) {
-          errorMessage = "O campo email é requerido";
+          errorMessage = "O campo email é obrigatório";
         }
 
         return errorMessage;
@@ -65,12 +65,12 @@ class _cadastroPageState extends State<cadastroPage> {
 
   Widget _nometxt() {
     return TextFormField(
-      controller: nometxt,
       decoration: InputDecoration(
-        hintText: "Nome",
+        border: OutlineInputBorder(),
+        hintText: "Nome completo",
         hintStyle: TextStyle(
-          color: Color(0xFFBDC2CB),
-          fontSize: 18.0,
+          color: Color(0xFF999999),
+          fontSize: 14.0,
         ),
       ),
       onSaved: (String username) {
@@ -91,12 +91,13 @@ class _cadastroPageState extends State<cadastroPage> {
 
   Widget _cpftxt() {
     return TextFormField(
-      controller: cpftxt,
+      keyboardType: TextInputType.number,
       decoration: InputDecoration(
-        hintText: "CPF",
+        border: OutlineInputBorder(),
+        hintText: "CPF somente números",
         hintStyle: TextStyle(
-          color: Color(0xFFBDC2CB),
-          fontSize: 18.0,
+          color: Color(0xFF999999),
+          fontSize: 14.0,
         ),
       ),
       onSaved: (String cpf) {
@@ -117,12 +118,13 @@ class _cadastroPageState extends State<cadastroPage> {
 
   Widget _telefonetxt() {
     return TextFormField(
-      controller: telefonetxt,
+      keyboardType: TextInputType.number,
       decoration: InputDecoration(
-        hintText: "Telefone",
+        border: OutlineInputBorder(),
+        hintText: "Número de celular com DDD",
         hintStyle: TextStyle(
-          color: Color(0xFFBDC2CB),
-          fontSize: 18.0,
+          color: Color(0xFF999999),
+          fontSize: 14.0,
         ),
       ),
       onSaved: (String telefone) {
@@ -131,7 +133,7 @@ class _cadastroPageState extends State<cadastroPage> {
       validator: (String telefone) {
         String errorMessage;
         if (telefone.isEmpty) {
-          errorMessage = "O telefone é requerido";
+          errorMessage = "O telefone é obrigatório";
         }
         // if(username.length > 8 ){
         //   errorMessage = "Your username is too short";
@@ -143,12 +145,12 @@ class _cadastroPageState extends State<cadastroPage> {
 
   Widget _senhatxt() {
     return TextFormField(
-      controller: senhatxt,
       decoration: InputDecoration(
+        border: OutlineInputBorder(),
         hintText: "Senha",
         hintStyle: TextStyle(
-          color: Color(0xFFBDC2CB),
-          fontSize: 18.0,
+          color: Color(0xFF999999),
+          fontSize: 14.0,
         ),
         suffixIcon: IconButton(
           onPressed: () {
@@ -169,7 +171,7 @@ class _cadastroPageState extends State<cadastroPage> {
         String errorMessage;
 
         if (password.isEmpty) {
-          errorMessage = "O campo senha é requerido";
+          errorMessage = "O campo senha é obrigatório";
         }
         return errorMessage;
       },
@@ -319,40 +321,34 @@ class _cadastroPageState extends State<cadastroPage> {
                     mensagemExcluir();
                   },
                   child: Image(
-                    image: AssetImage(caminhoImg),
-                    height: 120.0,
-                    width: 120.0,
+                    image: AssetImage("assets/imagens/login.png"),
+                    height: 100.0,
+                    width: 250.0,
                   ),
                 ),
                 SizedBox(
                   height: 20.0,
                 ),
-                Card(
-                  elevation: 5.0,
-                  child: Padding(
-                    padding: EdgeInsets.all(20.0),
-                    child: Column(
-                      children: <Widget>[
-                        _nometxt(),
-                        SizedBox(
-                          height: 12.0,
-                        ),
-                        _cpftxt(),
-                        SizedBox(
-                          height: 12.0,
-                        ),
-                        _telefonetxt(),
-                        SizedBox(
-                          height: 12.0,
-                        ),
-                        _emailtxt(),
-                        SizedBox(
-                          height: 12.0,
-                        ),
-                        _senhatxt(),
-                      ],
+                Column(
+                  children: <Widget>[
+                    _nometxt(),
+                    SizedBox(
+                      height: 20.0,
                     ),
-                  ),
+                    _emailtxt(),
+                    SizedBox(
+                      height: 20.0,
+                    ),
+                    _telefonetxt(),
+                    SizedBox(
+                      height: 20.0,
+                    ),
+                    _cpftxt(),
+                    SizedBox(
+                      height: 20.0,
+                    ),
+                    _senhatxt(),
+                  ],
                 ),
                 SizedBox(
                   height: 20.0,
@@ -361,12 +357,10 @@ class _cadastroPageState extends State<cadastroPage> {
                   onTap: () {
                     _inserir();
                   },
-                  child: Button(
-                    btnText: nomebtn,
-                  ),
+                  child: Button(btnText: "Cadastrar"),
                 ),
-                Divider(
-                  height: 20.0,
+                SizedBox(
+                  height: 30.0,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -374,20 +368,20 @@ class _cadastroPageState extends State<cadastroPage> {
                     Text(
                       "Já possui Cadastro?",
                       style: TextStyle(
-                          color: Color(0xFFBDC2CB),
-                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF999999),
+                          fontWeight: FontWeight.w400,
                           fontSize: 16.0),
                     ),
-                    SizedBox(width: 10.0),
+                    SizedBox(width: 5.0),
                     GestureDetector(
                       onTap: () {
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
                             builder: (BuildContext context) => LoginPage()));
                       },
                       child: Text(
-                        "Logar",
+                        "Fazer Login",
                         style: TextStyle(
-                            color: Colors.blueAccent,
+                            color: Color(0xFFFF005C),
                             fontWeight: FontWeight.bold,
                             fontSize: 16.0),
                       ),
