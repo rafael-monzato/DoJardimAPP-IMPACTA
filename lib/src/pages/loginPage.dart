@@ -116,11 +116,11 @@ class _LoginPageState extends State<LoginPage> {
                   children: <Widget>[
                     _emailtxt(),
                     SizedBox(
-                      height: 20.0,
+                      height: 16.0,
                     ),
                     _senhatxt(),
                   ],
-            ),
+                ),
             Container(alignment: Alignment.centerRight,
               child: TextButton(
                 style: TextButton.styleFrom(
@@ -130,6 +130,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Text('Esqueceu sua senha?', style: TextStyle(color: Color(0xFFFF005C)),),
               ),
             ),
+
             SizedBox(
               height: 30.0,
             ),
@@ -142,8 +143,8 @@ class _LoginPageState extends State<LoginPage> {
                 btnText: "Logar",
               ),
             ),
-            SizedBox(
-              height: 30,
+            Divider(
+              height: 30.0,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -155,7 +156,7 @@ class _LoginPageState extends State<LoginPage> {
                       fontWeight: FontWeight.w400,
                       fontSize: 16.0),
                 ),
-                SizedBox(width: 10.0),
+                SizedBox(width: 5.0),
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(

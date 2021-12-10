@@ -19,38 +19,38 @@ class pedidosPage extends StatefulWidget {
 }
 
 class _pedidosPageState extends State<pedidosPage> {
-  var conf = Configuracoes.url;
+  // var conf = Configuracoes.url;
+  //
+  // var carregando = false;
+  // var dados;
 
-  var carregando = false;
-  var dados;
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-
-    _listarDados();
-  }
-
-  _listarDados() async {
-    var response = await http.get(
-        Uri.encodeFull(conf + "pedidos/listar.php?cpf=${widget._cpf}"),
-        headers: {"Accept": "application/json"});
-    final map = json.decode(response.body);
-    final itens = map["result"];
-    print(map["result"]);
-    if (map["result"] == 'Dados não encontrados!') {
-      Toast.show("Você nao Possui Pedidos", context,
-          duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
-    } else {
-      setState(() {
-        carregando = true;
-        this.dados = itens;
-        print(dados);
-      });
-    }
-  }
-
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  //
+  //   _listarDados();
+  // }
+  //
+  // _listarDados() async {
+  //   var response = await http.get(
+  //       Uri.encodeFull(conf + "pedidos/listar.php?cpf=${widget._cpf}"),
+  //       headers: {"Accept": "application/json"});
+  //   final map = json.decode(response.body);
+  //   final itens = map["result"];
+  //   print(map["result"]);
+  //   if (map["result"] == 'Dados não encontrados!') {
+  //     Toast.show("Você nao Possui Pedidos", context,
+  //         duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
+  //   } else {
+  //     setState(() {
+  //       carregando = true;
+  //       this.dados = itens;
+  //       print(dados);
+  //     });
+  //   }
+  // }
+  //
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -58,30 +58,30 @@ class _pedidosPageState extends State<pedidosPage> {
       home: new Scaffold(
         appBar: appBar(),
         body: new Center(
-          child: !carregando
-              ? new CircularProgressIndicator()
-              : new ListView.builder(
-                  itemCount: this.dados != null ? this.dados.length : 0,
-                  itemBuilder: (context, i) {
-                    final d = this.dados[i];
-                    var cor;
-                    if (d['status'] == 'Iniciado') {
-                      cor = Colors.blue;
-                    } else if (d['status'] == 'Preparando') {
-                      cor = Colors.red;
-                    } else if (d['status'] == 'Despachado') {
-                      cor = Colors.orangeAccent;
-                    } else {
-                      cor = Colors.green;
-                    }
-
-                    return ListTile(
-                      leading: Icon(Icons.check_circle, color: cor),
-                      title: Text('Status ' + d['status']),
-                      subtitle:
-                          Text(d['data'] + ' - Previsão Chegada ' + d['hora']),
-                    );
-                  }),
+          // child: !carregando
+          //     ? new CircularProgressIndicator()
+          //     : new ListView.builder(
+          //         itemCount: this.dados != null ? this.dados.length : 0,
+          //         itemBuilder: (context, i) {
+          //           final d = this.dados[i];
+          //           var cor;
+          //           if (d['status'] == 'Iniciado') {
+          //             cor = Colors.blue;
+          //           } else if (d['status'] == 'Preparando') {
+          //             cor = Colors.red;
+          //           } else if (d['status'] == 'Despachado') {
+          //             cor = Colors.orangeAccent;
+          //           } else {
+          //             cor = Colors.green;
+          //           }
+          //
+          //           return ListTile(
+          //             leading: Icon(Icons.check_circle, color: cor),
+          //             title: Text('Status ' + d['status']),
+          //             subtitle:
+          //                 Text(d['data'] + ' - Previsão Chegada ' + d['hora']),
+          //           );
+          //         }),
         ),
       ),
     );
@@ -89,7 +89,7 @@ class _pedidosPageState extends State<pedidosPage> {
 
   appBar() {
     return AppBar(
-      backgroundColor: Colors.indigo,
+      backgroundColor: Color(0xFF242C33),
       elevation: 0,
       iconTheme: IconThemeData(color: Colors.white),
       leading: IconButton(
@@ -104,7 +104,7 @@ class _pedidosPageState extends State<pedidosPage> {
                     Tabs(widget._cpf, "", "", "")));
           }),
       title: Text(
-        "Lista de Pedidos",
+        "Reserva efetuada",
         style: TextStyle(
             color: Colors.white, fontSize: 15.0, fontWeight: FontWeight.bold),
       ),

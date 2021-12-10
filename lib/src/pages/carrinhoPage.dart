@@ -1,3 +1,4 @@
+import 'package:dojardim/src/pages/pedidosPage.dart';
 import 'package:flutter/material.dart';
 import 'package:dojardim/src/componentes/botao.dart';
 import 'package:dojardim/src/componentes/cardCarrinho.dart';
@@ -186,7 +187,7 @@ class _carrinhoPageState extends State<carrinhoPage> {
               } else {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) =>
-                        checkoutPage(widget._cpf, total)));
+                        pedidosPage(widget._cpf)));
               }
             },
             child: Button(btnText: "Continuar"),

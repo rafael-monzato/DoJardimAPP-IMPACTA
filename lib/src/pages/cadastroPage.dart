@@ -5,6 +5,7 @@ import 'package:dojardim/src/pages/loginPage.dart';
 import 'package:dojardim/src/tabs/tabs.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:toast/toast.dart';
 
 class cadastroPage extends StatefulWidget {
   var _id;
@@ -31,8 +32,8 @@ class _cadastroPageState extends State<cadastroPage> {
   var nome, cpf, telefone, usuario, senha;
   var nometxt, emailtxt, senhatxt, cpftxt, telefonetxt;
   var dados;
-  var caminhoImg = "assets/imagens/cadastro.png";
-  var nomebtn = "Inserir";
+  var caminhoImg = "assets/imagens/login.png";
+  var nomebtn = "Cadastrar";
 
   GlobalKey<FormState> _formKey = GlobalKey();
 
@@ -135,9 +136,6 @@ class _cadastroPageState extends State<cadastroPage> {
         if (telefone.isEmpty) {
           errorMessage = "O telefone é obrigatório";
         }
-        // if(username.length > 8 ){
-        //   errorMessage = "Your username is too short";
-        // }
         return errorMessage;
       },
     );
@@ -197,7 +195,7 @@ class _cadastroPageState extends State<cadastroPage> {
         ),
       ],
     );
-    //showDialog(context: context, child: alert);
+    //showDialog(context: context, builder: );
 
     if (res == 'Inserido com Sucesso') {
       nometxt.text = "";
@@ -356,6 +354,10 @@ class _cadastroPageState extends State<cadastroPage> {
                 GestureDetector(
                   onTap: () {
                     _inserir();
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (BuildContext context) => LoginPage()));
+                    Toast.show("Cadastro efetuado com sucesso", context,
+                        duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
                   },
                   child: Button(btnText: "Cadastrar"),
                 ),

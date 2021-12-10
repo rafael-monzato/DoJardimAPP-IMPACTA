@@ -124,7 +124,7 @@ class _TabsState extends State<Tabs> {
               },
               leading: Icon(Icons.access_time),
               title: Text(
-                "Meus Pedidos",
+                "Minha reserva",
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
