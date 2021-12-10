@@ -7,7 +7,7 @@ import 'package:dojardim/src/tabs/tabs.dart';
 import 'package:http/http.dart' as http;
 
 class CardCarrinho extends StatefulWidget {
-  var _nome, _imagem, _valor, _categoria, _quantidade, _id_carrinho, _cpf;
+  var _nome, _imagem , _valor, _categoria, _quantidade, _id_carrinho, _cpf;
 
   CardCarrinho(nome, valor, imagem, categoria, quantidade, id_carrinho, cpf) {
     this._nome = nome;
@@ -135,7 +135,8 @@ class _CardCarrinhoState extends State<CardCarrinho> {
                         children: <Widget>[
                           Row(
                             children: <Widget>[
-                              Text(widget._categoria,
+                              Text(
+                                  widget._categoria,
                                   style: TextStyle(
                                       color: Color(0xFFD3D3D3),
                                       fontWeight: FontWeight.bold)),

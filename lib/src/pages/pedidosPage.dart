@@ -77,7 +77,7 @@ class _pedidosPageState extends State<pedidosPage> {
               ),
               SizedBox(height: 24.0),
               Text(
-                "Lembre-se, os produtos são perecíveis e você precisa buscá-los o quanto antes, no prazo máximo de dois dias corridos. Funcionamos de segunda a sexta, das 8h às 20h.\n è necessário comparecer com o documento de identificação CPF",
+                "Lembre-se, os produtos são perecíveis e você precisa buscá-los o quanto antes, no prazo máximo de dois dias corridos. Funcionamos de segunda a sexta, das 8h às 20h, é necessário comparecer com o documento de identificação CPF",
                  style: TextStyle(
                      color: Color(0xFF999999),
                      fontWeight: FontWeight.w400,

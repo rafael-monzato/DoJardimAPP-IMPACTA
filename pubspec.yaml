@@ -34,8 +34,14 @@ dependencies:
   toast: ^0.1.5
 
 dev_dependencies:
+  flutter_native_splash: ^0.2.8
   flutter_test:
     sdk: flutter
+
+flutter_native_splash:
+  color: "#242C33"
+  image: assets/imagens/splash.png
+  android: true
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -52,6 +58,7 @@ flutter:
   assets:
     - assets/imagens/login.png
     - assets/imagens/booked.png
+    - assets/imagens/splash.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
