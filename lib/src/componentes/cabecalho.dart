@@ -9,12 +9,6 @@ class Cabecalho extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        Column(
-          children: <Widget>[
-            Text("O que você deseja Comer?", style: textoTitulo),
-            Text("Temos diversas opções", style: textoSubtitulo),
-          ],
-        ),
         Icon(Icons.notifications),
       ],
     );

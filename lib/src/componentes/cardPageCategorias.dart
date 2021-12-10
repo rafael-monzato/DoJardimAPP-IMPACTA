@@ -80,7 +80,7 @@ class _CardPageCategoriasState extends State<CardPageCategorias> {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.all(
-        Radius.circular(10.0),
+        Radius.circular(5.0),
       ),
       child: Stack(
         children: <Widget>[
@@ -95,10 +95,12 @@ class _CardPageCategoriasState extends State<CardPageCategorias> {
                       final item = this.dados[i];
 
                       return new Container(
-                        margin: EdgeInsets.only(bottom: 7.0),
+                        margin: EdgeInsets.only(bottom: 16.0),
                         child: Stack(
                           children: <Widget>[
                             Container(
+                              alignment: Alignment.center,
+                              height: 200,
                               child: Image.network(item['imagem']),
                             ),
                             Positioned(

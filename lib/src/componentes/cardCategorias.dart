@@ -19,7 +19,7 @@ class CardCategoria extends StatelessWidget {
         margin: EdgeInsets.only(right: 16),
         //child: Card(
         child: Padding(
-            padding: EdgeInsets.only(left:8.0),
+            padding: EdgeInsets.only(left:0.0),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
