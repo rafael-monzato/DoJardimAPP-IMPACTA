@@ -55,33 +55,44 @@ class _pedidosPageState extends State<pedidosPage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: new Scaffold(
+      home: Scaffold(
         appBar: appBar(),
-        body: new Center(
-          // child: !carregando
-          //     ? new CircularProgressIndicator()
-          //     : new ListView.builder(
-          //         itemCount: this.dados != null ? this.dados.length : 0,
-          //         itemBuilder: (context, i) {
-          //           final d = this.dados[i];
-          //           var cor;
-          //           if (d['status'] == 'Iniciado') {
-          //             cor = Colors.blue;
-          //           } else if (d['status'] == 'Preparando') {
-          //             cor = Colors.red;
-          //           } else if (d['status'] == 'Despachado') {
-          //             cor = Colors.orangeAccent;
-          //           } else {
-          //             cor = Colors.green;
-          //           }
-          //
-          //           return ListTile(
-          //             leading: Icon(Icons.check_circle, color: cor),
-          //             title: Text('Status ' + d['status']),
-          //             subtitle:
-          //                 Text(d['data'] + ' - Previsão Chegada ' + d['hora']),
-          //           );
-          //         }),
+        body: Padding(
+          padding: EdgeInsets.only(top: 36.0, left: 24.0, right:24.0),
+          child: Column(
+            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Image(
+                image:AssetImage("assets/imagens/booked.png"),
+                height:200.0,
+                width:250.0,
+              ),
+              SizedBox(height: 36.0),
+              Text(
+                "Reserva efetuada com sucesso!",
+                style: TextStyle(
+                    color: Color(0xFF242C33),
+                    fontWeight: FontWeight.w800,
+                    fontSize: 24.0),
+              ),
+              SizedBox(height: 24.0),
+              Text(
+                "Lembre-se, os produtos são perecíveis e você precisa buscá-los o quanto antes, no prazo máximo de dois dias corridos. Funcionamos de segunda a sexta, das 8h às 20h.",
+                 style: TextStyle(
+                     color: Color(0xFF999999),
+                     fontWeight: FontWeight.w400,
+                     fontSize: 16.0),
+              ),
+              SizedBox(height: 36.0),
+              Text(
+                "Para dúvidas e/ou reclamações ligar para o número (11)xxxx-xxxx \n\n doJardim agradece a preferência!",
+                style: TextStyle(
+                    color: Color(0xFF999999),
+                    fontWeight: FontWeight.w400,
+                    fontSize: 16.0),
+              ),
+            ],
+          ),
         ),
       ),
     );

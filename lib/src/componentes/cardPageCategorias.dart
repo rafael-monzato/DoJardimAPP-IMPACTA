@@ -99,9 +99,7 @@ class _CardPageCategoriasState extends State<CardPageCategorias> {
                         child: Stack(
                           children: <Widget>[
                             Container(
-                              child: Image.network(conf_site +
-                                  "/images/categorias/" +
-                                  item['imagem']),
+                              child: Image.network(item['imagem']),
                             ),
                             Positioned(
                               left: 0.0,

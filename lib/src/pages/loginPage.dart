@@ -6,6 +6,7 @@ import 'package:dojardim/src/pages/produtosPage.dart';
 import 'package:dojardim/src/tabs/tabs.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:toast/toast.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -138,6 +139,8 @@ class _LoginPageState extends State<LoginPage> {
               onTap: () {
                 Login(emailtxt.text, senhatxt.text);
                 VerificarDados(emailtxt.text, senhatxt.text);
+                Toast.show("Usuário logado com sucesso", context,
+                    duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
               },
               child: Button(
                 btnText: "Logar",

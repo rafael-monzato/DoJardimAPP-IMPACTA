@@ -82,29 +82,6 @@ class _CardProdutoState extends State<CardProduto> {
     //showDialog(context: context, child: alert);
   }
 
-  mensagemCpf() {
-    var alert = new AlertDialog(
-      title: new Text('Faça o login'),
-      content: new SingleChildScrollView(
-        child: new ListBody(
-          children: <Widget>[
-            new Text(
-                "Você não pode adicionar um produto ao carrinho sem está logado"),
-          ],
-        ),
-      ),
-      actions: <Widget>[
-        new FlatButton(
-          child: new Text('Ok'),
-          onPressed: () {
-            Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (BuildContext context) => LoginPage()));
-          },
-        ),
-      ],
-    );
-    //showDialog(context: context, child: alert);
-  }
 
   //método para inserir na api
   void InserirCarrinho(cpf, id) async {
@@ -127,8 +104,7 @@ class _CardProdutoState extends State<CardProduto> {
       child: Stack(
         children: <Widget>[
           Container(
-            height: 230.0,
-            //height: widget._altura,
+            height: widget._altura,
             width: widget._largura,
             child: !carregando
                 ? new LinearProgressIndicator()
@@ -143,9 +119,7 @@ class _CardProdutoState extends State<CardProduto> {
                         child: Stack(
                           children: <Widget>[
                             Container(
-                                child: Image.network(conf_site +
-                                    "/images/produtos/" +
-                                    item['imagem'])),
+                                child: Image.network(item['imagem'])),
                             Positioned(
                               left: 0.0,
                               bottom: 0.0,
@@ -198,21 +172,24 @@ class _CardProdutoState extends State<CardProduto> {
                                         style: TextStyle(
                                             fontSize: 18.0,
                                             fontWeight: FontWeight.bold,
-                                            color: Colors.orangeAccent),
+                                            color: Colors.white),
                                       ),
                                       GestureDetector(
                                           onTap: () {
                                             if (widget._cpf == '' ||
                                                 widget._cpf == null) {
-                                              mensagemCpf();
+                                              Toast.show("Necessário fazer login para adicionar", context,
+                                                  duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
                                             } else {
                                               InserirCarrinho(
                                                   widget._cpf, item['id']);
                                             }
                                           },
-                                          child: Text("Adicionar",
+                                          child: Text("Adicionar ao Carrinho",
                                               style: TextStyle(
-                                                  color: Colors.grey))),
+                                                  fontSize: 12.0,
+                                                  fontWeight: FontWeight.w500,
+                                                  color: Color(0xFFFF4D8D)))),
                                     ],
                                   ),
                                 ],

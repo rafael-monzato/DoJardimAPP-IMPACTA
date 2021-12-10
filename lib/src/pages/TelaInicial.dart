@@ -1,3 +1,4 @@
+import 'package:dojardim/src/pages/produtosPage.dart';
 import 'package:flutter/material.dart';
 import 'package:dojardim/src/componentes/buscar.dart';
 import 'package:dojardim/src/componentes/cabecalho.dart';
@@ -40,19 +41,20 @@ class _TelaInicialState extends State<TelaInicial> {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              GestureDetector(
-                onTap: () {
-                  print("Pressionou' pressed");
-                },
-                child: Text(
-                  "Ver Todos",
-                  style: TextStyle(
-                    color: Color(0xFFFF005C),
-                    fontWeight: FontWeight.bold,
-                    fontSize: 12.0,
-                  ),
-                ),
-              ),
+              // GestureDetector(
+              //   onTap: () {
+              //     Navigator.of(context).push(MaterialPageRoute(
+              //         builder: (BuildContext context) => produtosPage("","",widget._cpf)));
+              //   },
+              //   child: Text(
+              //     "Ver Todos",
+              //     style: TextStyle(
+              //       color: Color(0xFFFF005C),
+              //       fontWeight: FontWeight.bold,
+              //       fontSize: 12.0,
+              //     ),
+              //   ),
+              // ),
             ],
           ),
           SizedBox(

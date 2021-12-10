@@ -26,6 +26,8 @@ class _CardCarrinhoState extends State<CardCarrinho> {
   var conf = Configuracoes.url;
 
   var conf_site = Configuracoes.url_site;
+  var dados;
+
 
   @override
   Widget build(BuildContext context) {
