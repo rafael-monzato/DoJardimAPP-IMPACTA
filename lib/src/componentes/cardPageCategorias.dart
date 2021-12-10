@@ -107,14 +107,14 @@ class _CardPageCategoriasState extends State<CardPageCategorias> {
                               left: 0.0,
                               bottom: 0.0,
                               width: 340.0,
-                              height: 60.0,
+                              height: 40.0,
                               child: Container(
                                 decoration: BoxDecoration(
                                     gradient: LinearGradient(
                                         begin: Alignment.bottomCenter,
                                         end: Alignment.topCenter,
                                         colors: [
-                                      Colors.black,
+                                      Colors.black54,
                                       Colors.black12
                                     ])),
                               ),

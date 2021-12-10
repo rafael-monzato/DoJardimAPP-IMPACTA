@@ -115,10 +115,11 @@ class _CardProdutoState extends State<CardProduto> {
 
                       return new Container(
                         margin:
-                            EdgeInsets.only(left: 0.0, right: 0.0, bottom: 8.0),
+                            EdgeInsets.only(left: 0.0, right: 0.0, bottom: 16.0),
                         child: Stack(
                           children: <Widget>[
                             Container(
+                                height: 230,
                                 child: Image.network(item['imagem'])),
                             Positioned(
                               left: 0.0,

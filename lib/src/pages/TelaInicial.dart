@@ -57,9 +57,7 @@ class _TelaInicialState extends State<TelaInicial> {
               // ),
             ],
           ),
-          SizedBox(
-            height: 20.0,
-          ),
+
           Column(
             children: <Widget>[CardProduto(460.0, 340.0, "", "", widget._cpf)],
           )
