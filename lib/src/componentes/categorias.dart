@@ -44,7 +44,7 @@ class _AreaCategoriaState extends State<AreaCategoria> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 80.0,
+        height: 90.0,
         margin: EdgeInsets.only(top: 10.0, bottom: 16.0),
         child: !carregando
             ? new LinearProgressIndicator()

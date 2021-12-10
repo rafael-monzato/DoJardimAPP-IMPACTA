@@ -77,7 +77,7 @@ class _pedidosPageState extends State<pedidosPage> {
               ),
               SizedBox(height: 24.0),
               Text(
-                "Lembre-se, os produtos são perecíveis e você precisa buscá-los o quanto antes, no prazo máximo de dois dias corridos. Funcionamos de segunda a sexta, das 8h às 20h.",
+                "Lembre-se, os produtos são perecíveis e você precisa buscá-los o quanto antes, no prazo máximo de dois dias corridos. Funcionamos de segunda a sexta, das 8h às 20h.\n è necessário comparecer com o documento de identificação CPF",
                  style: TextStyle(
                      color: Color(0xFF999999),
                      fontWeight: FontWeight.w400,
@@ -85,7 +85,7 @@ class _pedidosPageState extends State<pedidosPage> {
               ),
               SizedBox(height: 36.0),
               Text(
-                "Para dúvidas e/ou reclamações ligar para o número (11)xxxx-xxxx \n\n doJardim agradece a preferência!",
+                "CEAGESP: Av. Dr. Gastão Vidigal, 1946 - Vila Leopoldina, São Paulo - SP, 05316-900 \n \nPara dúvidas e/ou reclamações ligar para o número (11)xxxx-xxxx \n\n doJardim agradece a preferência!",
                 style: TextStyle(
                     color: Color(0xFF999999),
                     fontWeight: FontWeight.w400,

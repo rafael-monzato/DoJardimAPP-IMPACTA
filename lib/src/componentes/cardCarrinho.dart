@@ -104,8 +104,7 @@ class _CardCarrinhoState extends State<CardCarrinho> {
                 Container(
                   height: 70.0,
                   width: 70.0,
-                  child: Image.network(
-                      conf_site + "images/produtos/" + widget._imagem),
+                  child: Image.network(widget._imagem),
                 ),
                 SizedBox(
                   width: 10.0,

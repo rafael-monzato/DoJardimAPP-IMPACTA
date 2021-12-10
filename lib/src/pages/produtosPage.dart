@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:dojardim/src/componentes/cardProduto.dart';
-import 'package:dojardim/src/pages/loginPage.dart';
 
 class produtosPage extends StatefulWidget {
   var _nome, _idcat, _cpf;
@@ -42,7 +41,7 @@ class _produtosPageState extends State<produtosPage> {
   appBar() {
     if (nomebusca != "" || widget._idcat != "") {
       return AppBar(
-        backgroundColor: Colors.indigo,
+        backgroundColor: Color(0xFF242C33),
         elevation: 0,
         iconTheme: IconThemeData(color: Colors.white),
         title: Text(
@@ -51,25 +50,7 @@ class _produtosPageState extends State<produtosPage> {
               color: Colors.white, fontSize: 15.0, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
-        actions: <Widget>[
-          IconButton(
-              icon: Icon(
-                Icons.account_box,
-                // size: 30.0,
-                color: Colors.white,
-              ),
-              onPressed: () {
-                Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (BuildContext context) => LoginPage()));
-              }),
-          IconButton(
-            icon: Icon(
-              Icons.shopping_cart,
-              color: Colors.white,
-            ),
-            onPressed: () {},
-          )
-        ],
+
       );
     }
   }

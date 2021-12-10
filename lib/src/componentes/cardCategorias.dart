@@ -19,8 +19,10 @@ class CardCategoria extends StatelessWidget {
         margin: EdgeInsets.only(right: 16),
         //child: Card(
         child: Padding(
-            padding: EdgeInsets.only(left: 8.0),
-            child: Column(children: <Widget>[
+            padding: EdgeInsets.only(left:8.0),
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
               Container(
                 child: Image.network(imgCat),
                 height: 67.0,
