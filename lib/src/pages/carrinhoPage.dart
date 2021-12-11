@@ -129,7 +129,7 @@ class _carrinhoPageState extends State<carrinhoPage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text(
-                "Taxa de Entrega",
+                "Taxa de Reserva",
                 style: TextStyle(
                     color: Color(0xFF9BA7C6),
                     fontSize: 16.0,
